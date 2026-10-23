@@ -45,7 +45,7 @@ All under `/api/v1`, JSON in camelCase, wrapped in the response envelope.
 | Endpoint | Purpose |
 |----------|---------|
 | `POST /auth/login` | Exchange admin credentials for a token |
-| `GET /posts?status&q&tag&author&sort&direction&page&size` | Paginated list (`meta` holds page info) |
+| `GET /posts?status&q&tag&author&featured&sort&direction&page&size` | Paginated list (`meta` holds page info). `featured=true` returns only featured posts, `featured=false` only non-featured ones; omit it for no filter. Combines with `status`, `q`, `tag` and `author`. |
 | `GET /posts/counts` | Posts per status, for the list tabs |
 | `GET/PUT/DELETE /posts/{id}`, `POST /posts` | Read, update (send the loaded `version`), delete, create |
 | `POST /posts/{id}/publish` · `/unpublish` · `/archive` · `/duplicate` | Lifecycle actions |
